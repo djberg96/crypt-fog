@@ -1,0 +1,83 @@
+#!/usr/bin/env ruby
+#
+# This script allows you to encode a string or file using the
+# crypt-fog Ruby package.
+#
+# Author:
+#    Daniel J. Berger
+#
+# Warranty:
+#    This package is provided "as is" and without any express or
+#    implied warranties, including, without limitation, the implied
+#    warranties of merchantability and fitness for a particular purpose.
+#
+# License: Artistic 2.0
+#
+# Copyright: (C) 2003-2009 Daniel J. Berger.  All rights reserved.
+#
+require 'getoptlong'
+require 'crypt/fog'
+include Crypt
+
+FOGENC_VERSION = 1.2
+
+def usage
+   print <<-HELP
+      Usage: fogenc -f <filename> -d <salt>
+             fogenc -s <string> -d <salt>
+   HELP
+   exit
+end
+
+args = GetoptLong.new(
+   ["--file",    "-f", GetoptLong::OPTIONAL_ARGUMENT],
+   ["--degree",  "-d", GetoptLong::REQUIRED_ARGUMENT],
+   ["--string",  "-s", GetoptLong::OPTIONAL_ARGUMENT],
+   ["--version", "-v", GetoptLong::NO_ARGUMENT],
+   ["--help",    "-h", GetoptLong::NO_ARGUMENT]
+)
+
+opts = {}
+begin
+   args.each{ |option,value| opts[option] = value || true }
+rescue GetoptLong::InvalidOption
+   usage()
+   exit
+end
+
+if opts["--version"]
+   puts "VERSION: " + FOGENC_VERSION.to_s
+   exit
+end
+
+if opts["--help"]
+   usage()
+end
+
+unless opts["--file"] || opts["--string"]
+   STDERR.puts "Must provide string or file name"
+   usage()
+end
+
+unless opts["--degree"]
+   STDERR.puts "Must provide a degree of salt"
+   usage()
+end
+
+str = nil
+if opts["--file"]
+   str = IO.readlines(opts["--file"]).flatten.to_s.chomp
+else
+   str = opts["--string"]
+end
+
+salt = opts["--degree"].to_i
+
+puts
+puts "Copy and paste the string below to wherever you need it"
+puts "Remember your salt number (#{salt}) in order to decrypt it later on."
+puts "=" * 63
+puts
+
+puts "Crypted string: " + Fog.new(str,salt).to_s
+puts
