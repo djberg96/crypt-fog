@@ -1,64 +1,38 @@
 == Description
-   The crypt-fog library is a simple encryption mechanism, but slightly better
-   than Rot13. Its primary goal is to provide a reasonable amount of
-   obfuscation without having to resort to public/private key exchanges, etc.
+  The crypt-fog library is a simple encryption mechanism, but slightly better
+  than Rot13. Its primary goal is to provide a reasonable amount of
+  obfuscation without having to resort to public/private key exchanges, etc.
 
-   For hyper-sensitive data I recommend using a more advanced encryption
-   scheme.
+  For hyper-sensitive data I recommend using a more advanced encryption scheme.
 
-   In addition to the module, a stand-alone program is included called
-   "fogenc" that takes both a string and a number as arguments and returns
-   your encrypted string. You can then copy/paste that string to a .rc file.
-   Just remember the number you picked in order to decrypt it.
+  In addition to the module, a stand-alone program is included called
+  "fogenc" that takes both a string and a number as arguments and returns
+  your encrypted string. You can then copy/paste that string to a .rc file.
+  Just remember the number you picked in order to decrypt it.
 
-   Usage: fogenc -s "hello" -d 1688
-          fogenc -f "test.txt" -d 1066
+  Usage: fogenc -s "hello" -d 1688
+         fogenc -f "test.txt" -d 1066
           
-   Modify the shebang line as needed.
+  Modify the shebang line as needed.
           
 == Installation
-=== Gem Installation
-   gem install crypt-fog
+  gem install crypt-fog
 
-=== Standard Installation
-   rake install
-   
 == Synopsis
-   require 'crypt/fog'
-   include Crypt
+  require 'crypt/fog'
+  include Crypt
 
-   s = Fog.new("hello",2003)
-   p s # ";8??B"
-   p s.decrypt # "hello"
+  s = Fog.new("hello",2003)
+  p s # ";8??B"
+  p s.decrypt # "hello"
 
-   Fog.decrypt(";8??B",2003) # "hello"
-
-== Constants
-VERSION
-   The current version of the library, returned as a String.
-
-== Class Methods
-Fog.new(string, degree=13)
-   Creates and returns a new Fog object, which is your obfuscated string.
-   The degree is the value used to obfuscate the string.
-
-   Do not be fooled by the default +degree+ value. It is NOT using standard
-   rotation encryption.
-
-Fog.decrypt(string, degree=13)
-   Returns a (presumably) decrypted String. This method can be used
-   when the string comes from an external source.
-
-== Instance Methods
-Fog#decrypt
-   Returns a decrypted String, using the degree that was provided during
-   initialization.
+  Fog.decrypt(";8??B",2003) # "hello"
 
 == License
    Artistic 2.0
 
 == Copyright
-   (C) 2003-2009 Daniel J. Berger
+   (C) 2003-2014 Daniel J. Berger
    All rights reserved.
 
 == Author
