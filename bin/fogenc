@@ -13,7 +13,7 @@
 #
 # License: Artistic 2.0
 #
-# Copyright: (C) 2003-2009 Daniel J. Berger.  All rights reserved.
+# Copyright: (C) 2003-2014 Daniel J. Berger.  All rights reserved.
 #
 require 'getoptlong'
 require 'crypt/fog'
