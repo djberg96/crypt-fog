@@ -1,8 +1,7 @@
-== 1.0.2 - ???
+== 1.0.2 - 2-Nov-2014
 * Changed license to Artistic 2.0.
-* Some gemspec cleanup.
+* Some gemspec and Rakefile updates.
 * Test file renamed to test_crypt_fog.rb.
-* Added the :gem rake task and modified the :install_gem task to use it.
 * Some updates to the README.
 
 == 1.0.1 - 1-Aug-2007
