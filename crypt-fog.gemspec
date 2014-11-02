@@ -2,7 +2,7 @@ require 'rubygems'
 
 Gem::Specification.new do |gem|
   gem.name        = 'crypt-fog'
-  gem.version     = '1.0.3' 
+  gem.version     = '1.0.2'
   gem.author      = 'Daniel J. Berger'
   gem.license     = 'Artistic 2.0'
   gem.description = 'A simple string encryption scheme'
