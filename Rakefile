@@ -9,11 +9,7 @@ namespace :gem do
   task :create => [:clean] do
     spec = eval(IO.read('crypt-fog.gemspec'))
     require 'rubygems/package'
-    if Gem::VERSION < "2.0"
-      Gem::Builder.new(spec).build
-    else
-      Gem::Package.build(spec)
-    end
+    Gem::Package.build(spec)
   end
 
   desc 'Install the crypt-fog library as a gem'
