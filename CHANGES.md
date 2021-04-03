@@ -1,16 +1,16 @@
-== 1.0.2 - 2-Nov-2014
-* Changed license to Artistic 2.0.
+## 1.0.2 - 2-Nov-2014
+* Changed license to Artistic-2.0.
 * Some gemspec and Rakefile updates.
 * Test file renamed to test_crypt_fog.rb.
 * Some updates to the README.
 
-== 1.0.1 - 1-Aug-2007
+## 1.0.1 - 1-Aug-2007
 * Changed 'quickenc' to 'fogenc'
 * Now includes a Rakefile with tasks for installation and testing.
 * There are now comments in the source, though they are still obfuscated.
 * Some doc updates.
 
-== 1.0.0 - 12-Jun-2005
+## 1.0.0 - 12-Jun-2005
 * Moved project to RubyForge.
 * Removed the 'doc' directory.  Because the documentation is so short, that
   information is now in the README file, which is rdoc friendly.
@@ -21,5 +21,5 @@
   README file.
 * Added a gemspec.
 
-== 0.1.0 - 30-Jul-2003
+## 0.1.0 - 30-Jul-2003
 - Initial release
