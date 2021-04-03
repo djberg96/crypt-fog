@@ -1,6 +1,6 @@
-* MANIFEST
-* CHANGES
-* README
+* MANIFEST.md
+* CHANGES.md
+* README.md
 * Rakefile
 * crypt-fog.gemspec
 * bin/fogenc
