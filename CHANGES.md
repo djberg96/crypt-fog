@@ -1,3 +1,12 @@
+## 1.0.3 - 6-Apr-2021
+* Added a Gemfile.
+* Added a cert.
+* Updates to the gemspec, including rubygems.org metadata.
+* The VERSION constant is now frozen.
+* Documentation files are now in markdown format.
+* Fixed the fogenc binary perms so that it's executable by default.
+* Assumes you're on Ruby 2.x or later by now.
+
 ## 1.0.2 - 2-Nov-2014
 * Changed license to Artistic-2.0.
 * Some gemspec and Rakefile updates.
