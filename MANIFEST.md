@@ -4,5 +4,7 @@
 * Rakefile
 * crypt-fog.gemspec
 * bin/fogenc
+* certs/djberg96_pub.pem
+* lib/crypt-fog.rb
 * lib/crypt/fog.rb
 * test/tc_fog.rb
