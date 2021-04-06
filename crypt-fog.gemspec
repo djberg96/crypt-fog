@@ -1,19 +1,22 @@
 require 'rubygems'
 
-Gem::Specification.new do |gem|
-  gem.name        = 'crypt-fog'
-  gem.version     = '1.0.2'
-  gem.author      = 'Daniel J. Berger'
-  gem.license     = 'Artistic-2.0'
-  gem.description = 'A simple string encryption scheme'
-  gem.email       = 'djberg96@gmail.com'
-  gem.files       = Dir['**/*'].reject{ |f| f.include?('git') }
-  gem.test_files  = ['test/test_crypt_fog.rb']
-  gem.homepage    = 'https://github.com/djberg96/crypt-fog'
+Gem::Specification.new do |spec|
+  spec.name        = 'crypt-fog'
+  spec.version     = '1.0.2'
+  spec.author      = 'Daniel J. Berger'
+  spec.license     = 'Artistic-2.0'
+  spec.description = 'A simple string encryption scheme'
+  spec.email       = 'djberg96@gmail.com'
+  spec.files       = Dir['**/*'].reject{ |f| f.include?('git') }
+  spec.test_files  = ['test/test_crypt_fog.rb']
+  spec.homepage    = 'https://github.com/djberg96/crypt-fog'
 
-  gem.executables << 'fogenc'
+  spec.executables << 'fogenc'
 
-  gem.summary = <<-EOF
+  spec.add_development_dependency('rake')
+  spec.add_development_dependency('test-unit', '~> 3.2')
+
+  spec.summary = <<-EOF
     crypt-fog is a simple encryption mechanism, but slightly better
     than Rot13.  It's primary goal is to provide a reasonable amount
     of obfuscation without having to resort to public/private key
