@@ -2,13 +2,14 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/clean'
 
-CLEAN.include("*.gem", "*.rbc")
+CLEAN.include("*.gem", "*.rbc", "*.lock")
 
 namespace :gem do
   desc 'Build the crypt-fog gem'
   task :create => [:clean] do
-    spec = eval(IO.read('crypt-fog.gemspec'))
     require 'rubygems/package'
+    spec = eval(IO.read('crypt-fog.gemspec'))
+    spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
     Gem::Package.build(spec)
   end
 

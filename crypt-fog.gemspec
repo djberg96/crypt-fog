@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.files       = Dir['**/*'].reject{ |f| f.include?('git') }
   spec.test_files  = ['test/test_crypt_fog.rb']
   spec.homepage    = 'https://github.com/djberg96/crypt-fog'
+  spec.cert_chain  = ['certs/djberg96_pub.pem']
 
   spec.executables << 'fogenc'
 
