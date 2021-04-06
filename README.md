@@ -21,7 +21,7 @@ fogenc -f "test.txt" -d 1066
         
 ## Synopsis
 ```ruby
-require 'crypt/fog'
+require 'crypt/fog' # or 'crypt-fog'
 include Crypt
 
 s = Fog.new("hello",2003)
