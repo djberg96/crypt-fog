@@ -1,6 +1,7 @@
 ## 1.0.3 - 6-Apr-2021
 * Added a Gemfile.
 * Added a cert.
+* Added a crypt-fog.rb file for convenience.
 * Updates to the gemspec, including rubygems.org metadata.
 * The VERSION constant is now frozen.
 * Documentation files are now in markdown format.
