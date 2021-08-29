@@ -2,20 +2,20 @@ require 'rubygems'
 
 Gem::Specification.new do |spec|
   spec.name        = 'crypt-fog'
-  spec.version     = '1.0.3'
+  spec.version     = '1.1.0'
   spec.author      = 'Daniel J. Berger'
-  spec.license     = 'Artistic-2.0'
+  spec.license     = 'Apache-2.0'
   spec.description = 'A simple string encryption scheme'
   spec.email       = 'djberg96@gmail.com'
   spec.files       = Dir['**/*'].reject{ |f| f.include?('git') }
-  spec.test_files  = ['test/test_crypt_fog.rb']
+  spec.test_files  = Dir['spec/*.rb']
   spec.homepage    = 'https://github.com/djberg96/crypt-fog'
   spec.cert_chain  = ['certs/djberg96_pub.pem']
 
   spec.executables << 'fogenc'
 
   spec.add_development_dependency('rake')
-  spec.add_development_dependency('test-unit', '~> 3.2')
+  spec.add_development_dependency('rspec', '~> 3.9')
 
   spec.metadata = {
     'homepage_uri'      => 'https://github.com/djberg96/crypt-fog',
