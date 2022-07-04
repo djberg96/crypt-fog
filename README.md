@@ -11,7 +11,11 @@ your encrypted string. You can then copy/paste that string to a .rc file.
 Just remember the number you picked in order to decrypt it.
 
 ## Installation
-  gem install crypt-fog
+`gem install crypt-fog`
+
+## Installing the Trusted Cert
+
+`gem cert --add <(curl -Ls https://raw.githubusercontent.com/djberg96/crypt-fog/main/certs/djberg96_pub.pem)`
 
 ## Command Line
 ```
